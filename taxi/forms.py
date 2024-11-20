@@ -16,6 +16,18 @@ class CarForm(forms.ModelForm):
         model = Car
         fields = "__all__"
 
+class CarSearchForm(forms.Form):
+    model = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Search by model"
+            }
+        )
+    )
+
 
 class DriverCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
@@ -60,6 +72,18 @@ class DriverSearchForm(forms.Form):
         widget=forms.TextInput(
             attrs={
                 "placeholder": "Search by username"
+            }
+        )
+    )
+
+class ManufacturerSearchForm(forms.Form):
+    name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Search by name"
             }
         )
     )
