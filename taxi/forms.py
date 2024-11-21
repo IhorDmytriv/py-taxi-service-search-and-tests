@@ -16,6 +16,7 @@ class CarForm(forms.ModelForm):
         model = Car
         fields = "__all__"
 
+
 class CarSearchForm(forms.Form):
     model = forms.CharField(
         max_length=255,
@@ -75,6 +76,7 @@ class DriverSearchForm(forms.Form):
             }
         )
     )
+
 
 class ManufacturerSearchForm(forms.Form):
     name = forms.CharField(
